@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-input_folder = '/Users/Marta/Desktop/thesis/code/data_csv'
-output_folder = '/Users/Marta/Desktop/thesis/code/'
+input_folder = '/data_csv/'
+output_folder = '/data_json/'
 
 merged_columns = ['trialInBlock', 'choiceColor', 'choiceLocation',
                   'choiceMotionDirection', 'reward', 'learningStatus', 'HDtrlnum',
