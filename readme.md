@@ -45,6 +45,49 @@ This repository is structured into multiple directories, here is an outline of t
 - `vizualisation_plots`: Contains various plots generated from the analysis.
 
 
+
+## Results
+
+This project explores monkeys' choice behavior in feature-specific, reward-based learning tasks. With 216 sessions involving 9347 blocks and 75,138 trials, our study reveals that the fraction of times monkeys selected the better option often deviated from the matching law. Undermatching behavior, where the relative choice fraction is lower than the relative reward fraction, was commonly observed.
+
+#### Method Efficiency
+
+Traditional metrics, such as win-stay or lose-switch, explained up to 50% of the deviation from matching. We expanded the usage of entropy-based metrics to the context of feature-specific behavior, which improved explanatory power to 97%.
+
+#### Predictive Power
+
+Entropy-based metrics showed significant predictive power, outperforming traditional metrics. In particular, ERDS(lose) had a strong positive correlation (97%) with deviations from matching. The models using entropy-based metrics achieved higher R-squared values and lower RMSE.
+
+
+| Model             | Agent | Approach      | RMSE         | MAE          | MAPE         | R-squared    |
+|-------------------|-------|---------------|--------------|--------------|--------------|--------------|
+| LSTM              | 1     | Entropy-Based | **0.03133**  | **0.01956**  | **15.54**    | **0.94719**  |
+|                   | 2     | Entropy-Based | **0.02258**  | **0.01348**  | **9.14**     | **0.95544**  |
+|                   | 1     | Traditional   | 0.05136      | 0.03348      | 29.27        | 0.85811      |
+|                   | 2     | Traditional   | 0.04823      | 0.02139      | 18.92        | 0.90034      |
+| GRU               | 1     | Entropy-Based | **0.03235**  | **0.01991**  | **15.31**    | **0.94370**  |
+|                   | 2     | Entropy-Based | **0.02266**  | **0.01368**  | **9.19**     | **0.95511**  |
+|                   | 1     | Traditional   | 0.05349      | 0.03581      | 29.88        | 0.84609      |
+|                   | 2     | Traditional   | 0.02891      | 0.02208      | 19.15        | 0.92696      |
+| CNN               | 1     | Entropy-Based | **0.03544**  | **0.02696**  | **20.18**    | **0.93246**  |
+|                   | 2     | Entropy-Based | **0.01862**  | **0.01234**  | **10.57**    | **0.96969**  |
+|                   | 1     | Traditional   | 0.07438      | 0.04594      | 30.94        | 0.70238      |
+|                   | 2     | Traditional   | 0.04597      | 0.03477      | 26.58        | 0.81524      |
+| Bidirectional LSTM| 1     | Entropy-Based | **0.04091**  | **0.02776**  | **16.76**    | **0.90996**  |
+|                   | 2     | Entropy-Based | **0.02676**  | **0.01897**  | **13.35**    | **0.93741**  |
+|                   | 1     | Traditional   | 0.06744      | 0.04750      | 34.75        | 0.75536      |
+|                   | 2     | Traditional   | 0.03919      | 0.02970      | 26.93        | 0.86576      |
+
+
+
+Entropy-based metrics significantly enhanced computational models of decision-making in feature-specific environments. These metrics consistently outperform traditional methods, offering valuable insights into complex behaviors.
+
+
+
+
+
+
+
 ## Dependencies
 - Python 3.8+
 - pandas
